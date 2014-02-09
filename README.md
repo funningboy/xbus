@@ -4,11 +4,11 @@ a sample bus UVM/SV verification env that contains direct pattern, random patter
 
 ## pattern definition
 1. direct pattern : normal read/write test, like read after write test, the expected and answer had already known
-2. random pattern : random test based on it's constrain set
+2. random pattern : random test based on it's constrain rule set
 3. trx replay pattern : replay trx via DPI interface supported
 
 ## how to run it?
-1.you can check our testsuites first, we provide threr kinds of test at path ./sv/pat
+1.you can check our testsuites first, we provide three kinds of test at path ./sv/pat
 
 1.1. for direct pattern
 +UVM_TESTNAME=test_xbus_normal_rw_seq_lib
