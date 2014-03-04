@@ -59,7 +59,7 @@ function void xbus_master_agent::build_all();
   m_monitor = xbus_monitor::type_id::create("m_monitor", this);
 
   // if it's active mode
-  if (m_conf.is_active == uvm_active) begin
+  if (m_conf.is_active == UVM_ACTIVE) begin
     m_driver = xbus_master_driver::type_id::create("m_driver", this);
     m_sequencer = xbus_master_sequencer::type_id::create("m_sequencer", this);
   end
@@ -70,7 +70,7 @@ function void xbus_master_agent::populate_conf();
   // assign/populate conf
   m_monitor.assign_conf(m_conf);
 
-  if (m_conf.is_active == uvm_active) begin
+  if (m_conf.is_active == UVM_ACTIVE) begin
     m_driver.assign_conf(m_conf);
     m_sequencer.assign_conf(m_conf);
   end
@@ -81,7 +81,7 @@ function void xbus_master_agent::populate_vif();
   // assign/populate vif
   m_monitor.assign_vif(m_vif);
 
-  if (m_conf.is_active == uvm_active) begin
+  if (m_conf.is_active == UVM_ACTIVE) begin
     m_driver.assign_vif(m_vif);
     m_sequencer.assign_vif(m_vif);
   end
@@ -107,7 +107,7 @@ function void xbus_master_agent::connect_phase(uvm_phase phase);
 
   populate_vif();
   // connect sequencer if it's an active model
-  if (m_conf.is_active == uvm_active) begin
+  if (m_conf.is_active == UVM_ACTIVE) begin
     m_driver.seq_item_port.connect(m_sequencer.seq_item_export);
   end
 endfunction : connect_phase

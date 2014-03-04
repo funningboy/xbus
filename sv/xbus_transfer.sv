@@ -24,11 +24,11 @@ class xbus_base extends uvm_sequence_item;
 
   // uvm field register
   `uvm_object_utils_begin(xbus_base)
-  `uvm_field_int (id, uvm_default)
-  `uvm_field_int (begin_cycle, uvm_default)
-  `uvm_field_int (end_cycle, uvm_default)
-  `uvm_field_int (begin_time, uvm_default)
-  `uvm_field_int (end_time, uvm_default)
+  `uvm_field_int (id, UVM_DEFAULT)
+  `uvm_field_int (begin_cycle, UVM_DEFAULT)
+  `uvm_field_int (end_cycle, UVM_DEFAULT)
+  `uvm_field_int (begin_time, UVM_DEFAULT)
+  `uvm_field_int (end_time, UVM_DEFAULT)
   `uvm_object_utils_end
 
   // new
@@ -44,16 +44,16 @@ class xbus_transfer extends xbus_base;
   rand longint byten;
 
   constraint c_rw     { xbus_type::READ <= rw && rw <= xbus_type::WRITE; }
-  constraint c_addr   { 0 <= addr && addr <= 2 ** `def_c_addr_width-1; }
-  constraint c_data   { 0 <= data && data <= 2 ** `def_c_wdata_width-1; } // the r/w data width is the same
-  constraint c_byten  { 0 <= byten && byten <= 2 ** `def_c_be_width-1; }
+  constraint c_addr   { 0 <= addr && addr <= 2 ** `DEF_C_ADDR_WIDTH-1; }
+  constraint c_data   { 0 <= data && data <= 2 ** `DEF_C_WDATA_WIDTH-1; } // the r/w data width is the same
+  constraint c_byten  { 0 <= byten && byten <= 2 ** `DEF_C_BE_WIDTH-1; }
 
   // uvm field register
   `uvm_object_utils_begin(xbus_transfer)
-  `uvm_field_enum (xbus_type::rw_enum, rw, uvm_default)
-  `uvm_field_int (addr, uvm_default)
-  `uvm_field_int (data, uvm_default)
-  `uvm_field_int (byten, uvm_default)
+  `uvm_field_enum (xbus_type::rw_enum, rw, UVM_DEFAULT)
+  `uvm_field_int (addr, UVM_DEFAULT)
+  `uvm_field_int (data, UVM_DEFAULT)
+  `uvm_field_int (byten, UVM_DEFAULT)
   `uvm_object_utils_end
 
   // new

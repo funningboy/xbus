@@ -26,13 +26,13 @@ interface xbus_vif #(
   bit has_performance = 1;
 
 // XBUS interface lists
-  logic [C_REQ_WIDTH-1:0]   req;
-  logic [C_RW_WIDTH-1:0]    rw;
-  logic [C_ADDR_WIDTH-1:0]  addr;
-  logic [C_ACK_WIDTH-1:0]   ack;
-  logic [C_BE_WIDTH-1:0]    be;
-  logic [C_RDATA_WIDTH-1:0] rdata;
-  logic [C_WDATA_WIDTH-1:0] wdata;
+  logic [REQ_WIDTH-1:0]   req;
+  logic [RW_WIDTH-1:0]    rw;
+  logic [ADDR_WIDTH-1:0]  addr;
+  logic [ACK_WIDTH-1:0]   ack;
+  logic [BE_WIDTH-1:0]    be;
+  logic [RDATA_WIDTH-1:0] rdata;
+  logic [WDATA_WIDTH-1:0] wdata;
 
 // for XBUS slave port interface
   modport slave (

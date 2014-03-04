@@ -169,7 +169,7 @@ endtask : populate_write_transfer
 task xbus_master_driver::populate_read_transfer();
   `uvm_info(get_type_name(), {$psprintf("%s", m_trx.sprint())}, UVM_LOW)
 
-  if (m_conf.phy_onoff == xbus_type::on)
+  if (m_conf.phy_onoff == xbus_type::ON)
     #(m_conf.clk_period/2);
 
   m_vif.master.req  = 1'b1;
@@ -180,7 +180,7 @@ endtask : populate_read_transfer
 
 // release transfer
 task xbus_master_driver::release_transfer();
-  if (m_conf.phy_onoff == xbus_type::on)
+  if (m_conf.phy_onoff == xbus_type::ON)
     #(m_conf.clk_period/2);
 
   m_vif.master.req = 1'b0;

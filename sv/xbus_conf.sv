@@ -19,9 +19,9 @@ class xbus_base_conf extends uvm_object;
 
   // uvm field register
   `uvm_object_utils_begin(xbus_base_conf)
-  `uvm_field_int (has_checks, uvm_default)
-  `uvm_field_int (has_coverage, uvm_default)
-  `uvm_field_int (has_performance, uvm_default)
+  `uvm_field_int (has_checks, UVM_DEFAULT)
+  `uvm_field_int (has_coverage, UVM_DEFAULT)
+  `uvm_field_int (has_performance, UVM_DEFAULT)
   `uvm_object_utils_end
 
   // new
